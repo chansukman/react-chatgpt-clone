@@ -35,6 +35,11 @@ const App = () =>{
       console.error(error)
     }
   }
+  const handleOnKeyDown = (event)=>{
+    if (event.keyCode === 13) {
+      getMessages()
+    }
+  }
 
   useEffect(()=>{
     console.log(currentTitle,value,message)
@@ -85,8 +90,8 @@ console.log(uniqueTitles)
         </ul>
         <div className="buttom-section">
           <div className="input-container">
-            <input value={value} onChange={(e)=> setValue(e.target.value)}/>
-            <div id="submit" onClick={getMessages}>➢</div>
+            <input value={value} onChange={(e)=> setValue(e.target.value)} onKeyDown={handleOnKeyDown}/>
+            <div id="submit" onClick={getMessages} >➢</div>
           </div>
           <p className="info">
           Chat GPT Mar 14 Version. Free Research Preview.
