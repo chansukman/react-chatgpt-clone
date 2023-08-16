@@ -5,6 +5,7 @@ const App = () =>{
   const [message,setMessage] = useState(null)
   const [previousChats, setPreviousChats] = useState([])
   const [currentTitle,setCurrentTitle] = useState(null)
+  const [question, setQuestion] = useState(null)
   const createNewChat = ()=>{
     setMessage(null)
     setValue("")
@@ -30,7 +31,10 @@ const App = () =>{
     try{
       const response = await fetch('http://localhost:8000/completions',options)
       const data = await response.json()
+      console.log(data)
       setMessage(data.choices[0].message)
+      setQuestion(value)
+      // setValue("")
     }catch(error){
       console.error(error)
     }
@@ -42,7 +46,6 @@ const App = () =>{
   }
 
   useEffect(()=>{
-    console.log(currentTitle,value,message)
     if(!currentTitle && value && message){
       setCurrentTitle(value)
     }
@@ -52,7 +55,7 @@ const App = () =>{
           {
               title:currentTitle,
               role:"user",
-              content:value
+              content:question
           },
           {
               title:currentTitle,
@@ -61,13 +64,12 @@ const App = () =>{
           }
         ]
       ))
+      setValue("")
     }
   },[message,currentTitle])
 
-console.log(previousChats)
 const currentChat = previousChats.filter(previousChat => previousChat.title === currentTitle)
 const uniqueTitles =Array.from(new Set(previousChats.map(previousChat =>previousChat.title)))
-console.log(uniqueTitles)
 
   return (
     <div className="App">
