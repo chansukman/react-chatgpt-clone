@@ -5,7 +5,7 @@ const App = express()
 App.use(express.json())
 App.use(cors())
 
-const API_KEY = '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'
+const API_KEY = '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'
 
 App.post('/completions',async (req,res)=>{
     const options = {

@@ -6,6 +6,7 @@
 body{
   margin: 0;
   padding: 0;
+  font-family: Söhne,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 .App{
@@ -44,6 +45,12 @@ body{
   list-style-type: none;
   padding: 15px 0;
   cursor: pointor;
+}
+
+.history li:hover{
+  background-color: rgba(52,53,65,var(--tw-bg-opacity));
+  --tw-bg-opacity:1;
+  border-radius: 5px;
 }
 
 .main{
@@ -103,12 +110,16 @@ input:focus{
 }
 .feed li{
   display: flex;
-  background-color: #444654;
+  /* background-color: #444654; */
   width: 100%;
   padding: 20px;
   margin:20px 0;
   width: 95%;
 }
+.oddRow{
+  background-color: #444654;
+}
+
 
 .feed p{
   color: rgba(255, 255, 255,0.8);
