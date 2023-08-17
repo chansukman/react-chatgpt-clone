@@ -1,5 +1,4 @@
 import  {useState,useEffect} from 'react'
-import "./index.css"
 
 const App = () =>{
   const [value, setValue] = useState(null)
@@ -71,11 +70,6 @@ const App = () =>{
 const currentChat = previousChats.filter(previousChat => previousChat.title === currentTitle)
 const uniqueTitles =Array.from(new Set(previousChats.map(previousChat =>previousChat.title)))
 
-const getRowClassName = (index)=>{
-  let className =""
-  className = index % 2 === 0 ? "evenRow" : "oddRow"
-  return className
-}
 
   return (
     <div className="App">
@@ -91,7 +85,7 @@ const getRowClassName = (index)=>{
       <section className='main'>
         {!currentTitle &&<h1>StephGPT</h1>}
         <ul className="feed">
-          {currentChat?.map((chatMessage,index)=> <li key={index} className={getRowClassName(index)}>
+          {currentChat?.map((chatMessage,index)=> <li key={index} className="row">
             <p className='role'>{chatMessage.role}</p>
             <p>{chatMessage.content}</p>
           </li>)}
