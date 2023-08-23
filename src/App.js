@@ -1,5 +1,6 @@
 import SideBar from "./SideBar";
 import MainSection from "./MainSection";
+import Bottom from "./Bottom";
 import  {useState,useEffect} from 'react'
 
 
@@ -18,30 +19,35 @@ const App = () =>{
 
   return (
     <div className="App">
-      <SideBar 
-      value={valueFromMain} 
-      setValue={setValueFromMain}
-      message={message}
-      setMessage={setMessage}
-      currentTitle={currentTitle} 
-      setCurrentTitle={setCurrentTitle}
-      uniqueTitles={uniqueTitles}
-       />
-      <MainSection 
-      message={message}
-      setMessage={setMessage}
-      currentTitle={currentTitle} 
-      setCurrentTitle={setCurrentTitle}
-      uniqueTitles={uniqueTitles}
-      currentChat={currentChat}
-      question={question}
-      setQuestion={setQuestion}
-      getValue={getValue}
-      previousChats={previousChats}
-      setPreviousChats={setPreviousChats}
-
-      /> 
+      <div className="left-side">
+        <SideBar 
+        setValue={setValueFromMain}
+        setMessage={setMessage}
+        setCurrentTitle={setCurrentTitle}
+        uniqueTitles={uniqueTitles}
+        />
+      </div>
+      <div className="right-side">
+        <MainSection 
+        value={valueFromMain}
+        setValue={setValueFromMain}
+        currentTitle={currentTitle} 
+        setCurrentTitle={setCurrentTitle}
+        currentChat={currentChat}
+        /> 
+        <Bottom 
+        message={message}
+        setMessage={setMessage}
+        question={question}
+        setQuestion={setQuestion}
+        getValue={getValue}
+        setPreviousChats={setPreviousChats}
+        currentTitle={currentTitle} 
+        setCurrentTitle={setCurrentTitle}
+        />
     </div>
+      </div>
+      
   );
 }
 export default App;
