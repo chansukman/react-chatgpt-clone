@@ -46,7 +46,11 @@
     padding: 15px 0;
     cursor: pointor;
   }
-  
+  .history-title{
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   
   .chatHistory{
     display: flex;
@@ -56,7 +60,7 @@
   }
   .chatHistory svg{
     margin-right: 10px;
-    width: 20%;
+    width: 20px;
   }
 
   .chatHistory:hover{
@@ -64,3 +68,4 @@
     --tw-bg-opacity:1;
     border-radius: 5px;
   }
+

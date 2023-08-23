@@ -26,7 +26,8 @@ const Bottom=(props)=>{
         }
       }
       const handleOnKeyDown = (event)=>{
-        if (event.keyCode === 13) {
+        if (event.keyCode === 13 ) {
+            event.preventDefault();
           getMessages()
         }
       }
@@ -61,7 +62,7 @@ const Bottom=(props)=>{
     return(
         <div className="buttom-section">
         <div className="input-container">
-          <input value={value} onChange={(e)=> setValue(e.target.value)} onKeyDown={handleOnKeyDown}/>
+          <textarea value={value} onChange={(e)=> setValue(e.target.value)} onKeyDown={handleOnKeyDown}/>
           <div id="submit" onClick={getMessages} >➢</div>
         </div>
         <p className="info">
