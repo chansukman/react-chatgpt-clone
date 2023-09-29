@@ -11,7 +11,6 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    margin: auto;
   }
 
   .top-side svg{
@@ -20,6 +19,7 @@
     padding: 12px 0px;
     margin: 10px;
     border-radius: 5px;
+    cursor: pointer;
   }
 
   .newChatBtn{
@@ -29,6 +29,7 @@
     padding: 10px;
     margin: 10px;
     width: 80%;
+    cursor: pointer;
   }
   
   .leftNav{
@@ -40,6 +41,7 @@
   .history{
     padding: 10px;
     height: 100%;
+    flex-direction: column;
   }
   .history li{
     list-style-type: none;
@@ -57,6 +59,7 @@
     flex-direction: row;
     align-items: center;
     padding: 12px;
+    cursor: pointer;
   }
   .chatHistory svg{
     margin-right: 10px;
